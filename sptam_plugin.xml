@@ -1,0 +1,9 @@
+<library path="lib/libsptam_nodelet">
+
+  <class name="sptam/SPTAMNodelet" type="sptam::SPTAMNodelet" base_class_type="nodelet::Nodelet">
+  <description>
+    S-PTAM nodelet.
+  </description>
+  </class>
+
+</library>

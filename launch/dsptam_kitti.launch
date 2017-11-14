@@ -1,0 +1,68 @@
+<!-- PARA EJECUTAR: roslaunch package-name launch-file-name  -->
+<!--                roslaunch sptam dsptam.launch  -->
+<launch>
+
+    <group ns="dsptam">
+ 
+
+        <!-- Set use_sim_time true for datasets-->
+        <param name="use_sim_time" value="true"/>
+
+        <!-- static_transform_publisher x y z yaw pitch roll frame_id child_frame_id-->
+        <node pkg="tf2_ros" type="static_transform_publisher" name="camera_broadcaster" args="0 0 0 0 0 0 base_link left_camera" />
+  
+        <node
+            pkg="sptam"
+            type="map_node"   
+            name="mapNode"
+            output="screen"   
+         >
+             
+             <!-- Read S-PTAM parameters file -->
+            <rosparam command="load" file="$(find sptam)/configurationFiles/kitti.yaml" />
+         </node> 
+     
+    
+        <node
+            pkg="sptam"
+            type="tracker_node"   
+            name="tracker"
+            output="screen" 
+            >
+           
+            <!-- Read S-PTAM parameters file -->
+            <rosparam command="load" file="$(find sptam)/configurationFiles/kitti.yaml" />
+
+
+            <!-- Read S-PTAM parameters file -->
+            <param name="use_odometry" value="false"/>
+            <param name="approximate_sync" value="false" />
+            <param name="camera_frame" value="left_camera"/>
+            <param name="odom_frame" value="odom"/>
+
+
+          <!-- Remap topics  -->
+            <remap from="/stereo/left/image_rect"  to="/kitti_stereo/left/image_rect"/>
+            <remap from="/stereo/left/camera_info"  to="/kitti_stereo/left/camera_info"/>
+            <remap from="/stereo/right/image_rect"  to="/kitti_stereo/right/image_rect"/>
+            <remap from="/stereo/right/camera_info"  to="/kitti_stereo/right/camera_info"/>
+
+        </node>
+
+        <!-- S-PTAM pose path publisher. Used for visualization. -->
+        <node pkg="ros_utils" type="pose_to_path" name="sptam_path">
+           <remap from="pose" to="robot/pose" /> 
+           <remap from="path" to="robot/path" /> 
+        </node>
+
+    </group> 
+</launch>
+
+<!--pkg="..." -> nombre del paquete al que pertenece el nodo-->
+<!--type="..." -> nombre del ejecutable definido en CMakeLists.txt para este nodo-->
+<!--name="..." -> nombre con el que ROS lo va a identificar-->
+
+<!--required="true" -> si se cierra la ventana de este nodo, se interrumpen los demás-->
+<!--output="screen" -> la salida de este nodo se ve por consola (puedo definir mas de uno)-->
+<!--respawn="true"  -> si se cierra la ventana del nodo, se vuelve a abrir automaticamente-->
+<!-- launch-prefix="xterm -e" -> inicia este nodo en una terminal simpre y aparte -->

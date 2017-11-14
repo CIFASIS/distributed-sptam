@@ -1,0 +1,32 @@
+<!-- PARA EJECUTAR: roslaunch package-name launch-file-name  -->
+<!--                roslaunch sptam dsptam.launch  -->
+<launch>
+
+    <group ns="dsptam">
+ 
+
+        <!-- Set use_sim_time true for datasets-->
+        <param name="use_sim_time" value="true"/>
+
+        <node
+            pkg="sptam"
+            type="map_node"   
+            name="mapNode"
+            output="screen"   
+         >
+             
+             <!-- Read S-PTAM parameters file -->
+            <rosparam command="load" file="$(find sptam)/configurationFiles/kitti.yaml" />
+         </node> 
+
+    </group> 
+</launch>
+
+<!--pkg="..." -> nombre del paquete al que pertenece el nodo-->
+<!--type="..." -> nombre del ejecutable definido en CMakeLists.txt para este nodo-->
+<!--name="..." -> nombre con el que ROS lo va a identificar-->
+
+<!--required="true" -> si se cierra la ventana de este nodo, se interrumpen los demás-->
+<!--output="screen" -> la salida de este nodo se ve por consola (puedo definir mas de uno)-->
+<!--respawn="true"  -> si se cierra la ventana del nodo, se vuelve a abrir automaticamente-->
+<!-- launch-prefix="xterm -e" -> inicia este nodo en una terminal simpre y aparte -->
