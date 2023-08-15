@@ -2,7 +2,7 @@ S-PTAM is a Stereo SLAM system able to compute the camera trajectory in real-tim
 
 ## Video
 <a href="https://youtu.be/kq9DG5PQ2k8" target="_blank">
-  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/6648400/260780126-f6a9ebab-d2f6-4a49-9111-d64355f408e4.png" alt="GNSS-Stereo-Inertial Fusion" width="700" />
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/6648400/260780760-5414ebd2-ab51-4c03-a7f5-abcc5f4ef9a3.png" alt="DS-PTAM" width="700" />
 </a>
 
 ## Related Publications:
