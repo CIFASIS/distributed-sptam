@@ -1,6 +1,9 @@
 S-PTAM is a Stereo SLAM system able to compute the camera trajectory in real-time. It heavily exploits the parallel nature of the SLAM problem, separating the time-constrained pose estimation from less pressing matters such as map building and refinement tasks. On the other hand, the stereo setting allows to reconstruct a metric 3D map for each frame of stereo images, improving the accuracy of the mapping process with respect to monocular SLAM and avoiding the well-known bootstrapping problem. Also, the real scale of the environment is an essential feature for robots which have to interact with their surrounding workspace.
 
-[![](https://markdown-videos.deta.dev/youtube/kq9DG5PQ2k8)](https://youtu.be/kq9DG5PQ2k8)
+## Video
+<a href="https://youtu.be/kq9DG5PQ2k8" target="_blank">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/6648400/260780126-f6a9ebab-d2f6-4a49-9111-d64355f408e4.png" alt="GNSS-Stereo-Inertial Fusion" width="700" />
+</a>
 
 ## Related Publications:
 [1] Taihú Pire, Thomas Fischer, Javier Civera, Pablo De Cristóforis and Julio Jacobo Berlles.  
