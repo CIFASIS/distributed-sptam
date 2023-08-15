@@ -6,9 +6,13 @@ S-PTAM is a Stereo SLAM system able to compute the camera trajectory in real-tim
 </a>
 
 ## Related Publications:
-[1] Taihú Pire, Thomas Fischer, Javier Civera, Pablo De Cristóforis and Julio Jacobo Berlles.  
+[1] De Croce, Mauro; Pire, Taihú; Bergero, Federico.
+**DS-PTAM: Distributed Stereo Parallel Tracking and Mapping SLAM System**
+Journal of Intelligent & Robotic Systems, 2018. ISSN: 0921-0296. DOI: 10.1007/s10846-018-0913-6
+
+[2] Taihú Pire, Thomas Fischer, Javier Civera, Pablo De Cristóforis and Julio Jacobo Berlles.
 **Stereo Parallel Tracking and Mapping for Robot Localization**  
-Proc. of The International Conference on Intelligent Robots and Systems (IROS) (Accepted), Hamburg, Germany, 2015.
+Proc. of The International Conference on Intelligent Robots and Systems (IROS), Hamburg, Germany, 2015.
 
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
